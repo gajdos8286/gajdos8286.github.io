@@ -4,22 +4,22 @@ function temperatureBug()
 
     if (temp >= 80)
     {
-        document.getElementById('weather').src="img/beach.jpg"
+        document.getElementById('weather').src="img/beach.jpg";
         return "it is summer"
     }
     else if (temp >= 60)
     {
-        document.getElementById('weather').src="img/flower.jpg"
+        document.getElementById('weather').src="img/flower.jpg";
         return "it is spring"
     }
     else if (temp >= 45)
     {
-        document.getElementById('weather').src="img/pumpkin.jpg"
+        document.getElementById('weather').src="img/pumpkin.jpg";
         return "it is fall"
     }
     else
     {
-        document.getElementById('weather').src="img/snowman.jpg"
+        document.getElementById('weather').src="img/snowman.jpg";
         return "it is winter"
 
     }
