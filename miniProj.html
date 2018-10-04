@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Javascript Mini Projects</title>
+    <script src="myScript.js"></script>
+    <link rel="stylesheet" href="mini.css">
+</head>
+<body>
+
+<div class="topnav">
+    <a href="index.html">Home</a>
+    <a href="family.html">Family</a>
+    <a href="hobbies.html">Hobbies</a>
+    <a class="active" href="miniProj.html">Mini Projects</a>
+</div>
+
+<img id="weather" src="" height="75">
+
+<form name="project1">
+    <h3>Temperature Bug</h3>
+    <br><br>
+    Please enter in a temperature: <input type="text" name="temp1">
+    <br>
+    <button type="button" onclick="document.project1.season.value=temperatureBug()">Find Season</button>
+    <br><br>
+    <input type="text" readonly="true" name="season" style="border-style: none">
+    <br><br>
+</form>
+
+<form name="project2">
+    <h3>Calorie Counter</h3>
+    <br><br>
+    <select id="activities">
+        <option value="soccer">Soccer</option>
+        <option value="videogames">Video Games</option>
+        <option value="pingpong">Ping-Pong</option>
+    </select>
+    <select id="time">
+        <option value="30min">30 Minutes</option>
+        <option value="60min">60 Minutes</option>
+        <option value="90min">90 Minutes</option>
+        <option value="120min">120 Minutes</option>
+    </select>
+    <br><br>
+    <button type="button" onclick="document.project2.result.value=calorieCounter()">Calorie Converter</button>
+    <input id="result" size="35">
+</form>
+
+<form name="project3">
+    <h4>Assign Grade</h4>
+    <br><br>
+    Grade scores: 100-90=A, 89-80=B, 79-70=C, 69-60=D, 59 or lower=F
+    <br><br>
+    Please enter a test score: <input type="text" name="score">
+    <br>
+    <button type="button" onclick="document.project3.result.value=assignGrade()">Assign Grade</button>
+    <br><br>
+    <input type="text" readonly="true" name="result" style="border-style: none" size="25">
+</form>
+
+</body>
+</html>
