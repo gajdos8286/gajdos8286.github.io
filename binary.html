@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Binary Fun</title>
+    <script src="myScript.js"></script>
+    <link rel="stylesheet" href="binary.css">
+</head>
+<body>
+
+<div class="topnav">
+    <a href="index.html">Home</a>
+    <a href="family.html">Family</a>
+    <a href="hobbies.html">Hobbies</a>
+    <a href="miniProj.html">Mini Projects</a>
+    <a class="active" href="binary.html">Binary</a>
+</div>
+
+<form name="project1">
+    <h3>Base 2 to Base 10</h3>
+    <br><br>
+    Please enter a number: <input type="text" id="binaryNum">
+    <br><br>
+    Please enter a base for your number: <input type="text" id="base">
+    <br><br>
+    <button type="button" onclick="document.project1.result.value=smallToTen()">To Base 10</button>
+    <br><br>
+    <input name="result" readonly="true">
+</form>
+
+<form name="project2">
+    <h3>Base 10 to Any Base</h3>
+    <br><br>
+    Please enter a base 10 number: <input type="text" id="num1">
+    <br><br>
+    Please enter a base for your number: <input type="text" id="base1">
+    <br><br>
+    <button type="button" onclick="document.project2.result.value=tenToSmall()">From Base 10</button>
+    <br><br>
+    <input name="result" readonly="true">
+</form>
+
+<form name="project3">
+    <h3>Any base to Any base</h3>
+    <br><br>
+    Please enter a number: <input type="text" id="num">
+    <br>
+    Please enter a base for the previous number: <input type="text" id="baseOfNum">
+    <br>
+    Please enter a base to be converted to: <input type="text" id="newBase">
+    <br><br>
+    <button type="button" onclick="document.project3.result.value=baseToBase()">Base To Base</button>
+    <br><br>
+    <input name="result" readonly="true">
+</form>
+</body>
+</html>
