@@ -247,3 +247,26 @@ function powerOf(p1,p2)
 {
     return Math.pow(p1,p2);
 }
+
+function array()
+{
+    var inputs = [];
+    inputs.push(document.getElementById('adj1').value);
+    inputs.push(document.getElementById('adj2').value);
+    inputs.push(document.getElementById('adj3').value);
+    inputs.push(document.getElementById('adv1').value);
+    inputs.push(document.getElementById('noun1').value);
+    inputs.push(document.getElementById('noun2').value);
+    inputs.push(document.getElementById('noun3').value);
+    inputs.push(document.getElementById('noun4').value);
+    inputs.push(document.getElementById('noun5').value);
+    inputs.push(document.getElementById('noun6').value);
+    inputs.push(document.getElementById('plNoun1').value);
+    return "Driving a car can be fun if you follow this " + inputs[0].bold() + " advice:" +
+        " When approaching a " + inputs[4].bold() + " on the right, always blow your " + inputs[5].bold() +
+        " Before making a " + inputs[1].bold() + " turn, always stick your " + inputs[6].bold() + " out of the window." +
+        " Every 2000 miles, have your " + inputs[7].bold() + " inspected and your " + inputs[8].bold() + " checked" +
+        " When approaching a school, watch out for " + inputs[2].bold() + "" + inputs[10].bold() +
+        " Above all, drive " + inputs[3].bold() + ". The " + inputs[9].bold() + " you save may be your own!"
+    //story from redkid.net
+}
