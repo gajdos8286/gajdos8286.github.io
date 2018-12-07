@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>EZ Quiz</title>
+    <script src="myScript.js"></script>
+    <link rel="stylesheet" href="hobbies.css">
+</head>
+<body>
+<div class="topnav">
+    <a href="index.html">Home</a>
+    <a href="family.html">Family</a>
+    <a href="hobbies.html">Hobbies</a>
+    <a href="miniProj.html">Mini Projects</a>
+    <a href="binary.html">Binary</a>
+    <a href="calculator.html">Calculator</a>
+    <a href="madLib.html">MadLib</a>
+    <a class="active" href="quiz.html">Quiz</a>
+</div>
+
+<form name="quiz">
+    (made in 2018)
+   Question 1: What state is the Bears home stadium in?<br>
+    <input type="text" name="a1">
+    <br><br>
+    Question 2: When did the Bears win their last SuperBowl?<br>
+    <input type="text" name="a2">
+    <br><br>
+    Question 3: Which of the following are Chicago sports teams?<br>
+    <input type="checkbox" name="a3A" value="cubs">Cubs<br>
+    <input type="checkbox" name="a3B" value="redsox">Red Sox<br>
+    <input type="checkbox" name="a3C" value="bears">Bears<br>
+    <input type="checkbox" name="a3D" value="blackhawks">Blackhawks<br>
+    <input type="checkbox" name="a3E" value="sounders">Sounders<br>
+    <br><br>
+    Question 4: What are the ways to score in football?<br>
+    <input type="checkbox" name="a4A" value="touchdown">Touchdown<br>
+    <input type="checkbox" name="a4B" value="safety">Safety<br>
+    <input type="checkbox" name="a4C" value="firstdown">First Down<br>
+    <input type="checkbox" name="a4D" value="fieldgoal">Field Goal<br>
+    <input type="checkbox" name="a4E" value="sack">Sack<br>
+    <br><br>
+    Question 5: Which professional sport has two chicago teams?<br>
+    <input type="radio" name="a5" value="football">Football</input><br>
+    <input type="radio" name="a5" value="baseball">Baseball</input><br>
+    <input type="radio" name="a5" value="basketball">Basketball</input><br>
+    <input type="radio" name="a5" value="hockey">Hockey</input><br>
+    <br><br>
+    Question 6: Who is the mascot of the Chicago Bulls?<br>
+    <input type="radio" name="a6" value="skates">Skates the Grey Wolf</input><br>
+    <input type="radio" name="a6" value="junior">Junior</input><br>
+    <input type="radio" name="a6" value="benny">Benny the Bull</input><br>
+    <input type="radio" name="a6" value="clark">Clark</input><br>
+    <br><br>
+    <button type="button" onclick="document.getElementById('quiz').innerHTML=checkAnswers()">Check Answers</button>
+</form>
+<p id="quiz">
+
+</p>
+
+</body>
+</html>

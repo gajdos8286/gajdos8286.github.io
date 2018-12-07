@@ -270,3 +270,69 @@ function array()
         " Above all, drive " + inputs[3].bold() + ". The " + inputs[9].bold() + " you save may be your own!"
     //story from redkid.net
 }
+
+function checkAnswers()
+{
+    var feedback = [];
+    var score = 0;
+    var q1answer = document.quiz.a1.value.toLowerCase();
+    var q2answer = document.quiz.a2.value.toString();
+    if(q1answer === 'illinois')
+    {
+        score++;
+        feedback.push("Question 1 is correct");
+    } else
+    {
+        feedback.push("Incorrect. Question 1 was Illinois")
+    }
+    if (q2answer === '1985')
+    {
+        score++;
+        feedback.push("Question 2 is correct");
+    } else
+    {
+        feedback.push("Incorrect. Question 2 was 1985")
+    }
+    if (document.quiz.a3A.checked === true && document.quiz.a3C.checked === true && document.quiz.a3D.checked === true)
+    {
+        if (document.quiz.a3B.checked && document.quiz.a3E.checked === true)
+        {
+            feedback.push("Incorrect. Question 3 was Cubs, Bears, and Blackhawks")
+        }
+        score++;
+        feedback.push("Question 3 is correct");
+    } else
+    {
+        feedback.push("Incorrect. Question 3 was Cubs, Bears, and Blackhawks")
+    }
+    if (document.quiz.a4A.checked === true && document.quiz.a4B.checked === true && document.quiz.a4D.checked === true)
+    {
+        if (document.quiz.a4C.checked && document.quiz.a4E.checked === true)
+        {
+            feedback.push("Incorrect. Question 4 was touchdown, field goal, and safety")
+        }
+        score++;
+        feedback.push("Question 4 is correct");
+    } else
+    {
+        feedback.push("Incorrect. Question 4 was touchdown, field goal, and safety")
+    }
+    if (document.quiz.a5.value === 'baseball')
+    {
+        score++;
+        feedback.push("Question 5 is correct");
+    } else
+    {
+        feedback.push("Incorrect. Question 5 was baseball.")
+    }
+    if (document.quiz.a6.value === 'benny')
+    {
+        score++;
+        feedback.push("Question 6 is correct");
+    } else
+    {
+        feedback.push("Incorrect. Question 6 was Benny the Bull")
+    }
+    return "You got a score of " + score + " out of 6. <br>" + feedback + "";
+
+}
