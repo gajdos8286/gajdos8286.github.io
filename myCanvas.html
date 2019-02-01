@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Canvas Art</title>
+    <link rel="stylesheet" href="hobbies.css">
+    <script>
+        var a;//reference animation function
+        var rX = 0;
+        var rY = 250;
+        var rW = 50;
+        var rH = 50;
+        var oX = 200;
+        var oY = 50;
+        var oW = 150;
+        var oH = 25;
+
+        function initialize()
+        {
+            drawBackground();
+            drawObstacle();
+            var ctx = document.getElementById("myCanvas").getContext("2d");
+            ctx.fillStyle = "#FF0000";
+            rX = 0;
+            rY = 250;
+            ctx.fillRect(rX,rY,50,50);
+        }
+
+        function drawBackground()
+        {
+            var ctx = document.getElementById("myCanvas").getContext("2d");
+            ctx.fillStyle = "#007777";
+            ctx.fillRect(0,0, window.innerWidth, window.innerHeight);
+
+        }
+
+        function startAnimation()
+        {
+            animate();
+        }
+
+        function stopAnimation()
+        {
+            cancelAnimationFrame(a)
+        }
+
+        function animate()
+        {
+            a=requestAnimationFrame(animate);
+            drawBackground();
+            drawObstacle();
+            moveRectangleRight();
+            moveRectangleUp();
+            checkRectangle();
+            checkCollisionObstacle();
+        }
+        var moveAmountX = 4;
+        var moveAmountY = 4;
+        function moveRectangleRight()
+        {
+            var ctx = document.getElementById("myCanvas").getContext("2d");
+            rX = rX + moveAmountX;
+            ctx.fillStyle = "#FF0000";
+            ctx.fillRect(rX, rY,50,50);
+        }
+        function moveRectangleUp()
+        {
+            var ctx = document.getElementById("myCanvas").getContext("2d");
+            rY = rY + moveAmountY;
+            ctx.fillStyle = "#FF0000";
+            ctx.fillRect(rX, rY,50,50);
+        }
+
+        function checkRectangle()
+        {
+            if (rX > 450)
+            {
+                moveAmountX = moveAmountX *(-1)
+            }
+            if (rX < 0)
+            {
+                moveAmountX = moveAmountX *(-1)
+            }
+            if (rY > 450)
+            {
+                moveAmountY = moveAmountY *(-1)
+            }
+            if (rY < 0)
+            {
+                moveAmountY = moveAmountY *(-1)
+            }
+        }
+
+        //start collision detection
+        function drawObstacle()
+        {
+            var ctx = document.getElementById("myCanvas").getContext("2d");
+            ctx.fillStyle = "#00FF00";
+            ctx.fillRect(oX,oY,oW,oH);
+        }
+
+        function checkCollisionObstacle()
+        {
+            var ctx = document.getElementById("myCanvas").getContext("2d");
+            if (rX + rW > oX && rY < oY + oH && rX < oX + oW && rY + rH >oY)
+            {
+                if (rX > oX)
+                {
+                    moveAmountX = moveAmountX *(-1)
+                }
+                if (rX < oW)
+                {
+                    moveAmountX = moveAmountX *(-1)
+                }
+                if (rY > oH)
+                {
+                    moveAmountY = moveAmountY *(-1)
+                }
+                if (rY < oY)
+                {
+                    moveAmountY = moveAmountY *(-1)
+                }
+            }
+        }
+
+    </script>
+</head>
+<body onload="initialize()">
+<div class="topnav">
+    <a href="index.html">Home</a>
+    <a href="family.html">Family</a>
+    <a href="hobbies.html">Hobbies</a>
+    <a href="binary.html">Binary</a>
+    <a class="active" href="myCanvas.html">Canvas</a>
+    <a href="madLib.html">MadLib</a>
+</div>
+<canvas id="myCanvas" width="500" height="500" style="border: 3px solid #000000"></canvas>
+<button type="button" onclick="startAnimation()">Animate?</button>
+</body>
+</html>
